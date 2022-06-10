@@ -1,0 +1,78 @@
+﻿<Window x:Class="WPF_ZooManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_ZooManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="725">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Viewbox>
+            <Label Content="Zoo List" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Viewbox>
+        <ListBox Name = "listZoos" Grid.Row="1" Grid.Column="0" SelectionChanged="listZoos_SelectionChanged" FontSize= "24"/>
+        <Viewbox Grid.Row="0" Grid.Column="1" >
+            <Label Content="Associated Animals List" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Viewbox>
+        <ListBox x:Name = "listAssociatedAnimals"  SelectionChanged="listAssociatedAnimals_SelectionChanged" Grid.Row="1" Grid.Column="1" FontSize= "24"/>
+        <Button Grid.Row="0" Grid.Column="2" Click="Button_AddAnimalToZoo">
+            <Viewbox>
+                <TextBlock>Add Animal To Zoo</TextBlock>
+            </Viewbox>
+        </Button>
+        <ListBox x:Name = "listAnimals"  Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" SelectionChanged="listAnimals_SelectionChanged" FontSize= "24"/>
+        <Button Grid.Row="5" Grid.Column="3" Click="Button_DeleteAnimalFromZoo">
+            <Viewbox>
+                <TextBlock>Delete Animal From Zoo</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="5" Grid.Column="1" Click="Button_UpdateAnimal">
+            <Viewbox>
+                <TextBlock>Update Animal</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="5" Grid.Column="0" Click="Button_UpdateZoo">
+            <Viewbox>
+                <TextBlock>Update Zoo</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="4" Grid.Column="0" Click="Button_AddZoo">
+            <Viewbox>
+                <TextBlock>Add Zoo</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="4" Grid.Column="1" Click="Button_AddAnimal">
+            <Viewbox>
+                <TextBlock>Add Animal</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="0" Click="Button_DeleteZoo">
+            <Viewbox>
+                <TextBlock>Delete Zoo</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Click="Button_RemoveAnimal">
+            <Viewbox>
+                <TextBlock>Remove Animal</TextBlock>
+            </Viewbox>
+        </Button>
+        <TextBox GotFocus="TextBox_GotFocus" HorizontalAlignment="Stretch" BorderThickness="0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Viewbox HorizontalAlignment="Left" Stretch="Uniform" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBox Name="Input" Width="180" TextWrapping="Wrap" Text="" BorderThickness="0"/>
+        </Viewbox>
+    </Grid>
+</Window>

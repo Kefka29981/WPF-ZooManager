@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PanjutorialsDB" Class="LinqToSqlDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-PTI9OLV\PANJUTORIALSSQL;Initial Catalog=PanjutorialsDB;Persist Security Info=True;User ID=sa" SettingsObjectName="WPF_ZooManager.Properties.Settings" SettingsPropertyName="PanjutorialsDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Animal" Member="Animals">
+    <Type Name="Animal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Animal_PostAnimal" Member="PostAnimals" ThisKey="Id" OtherKey="AnimalId" Type="ZooAnimal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Post" Member="Zoos">
+    <Type Name="Zoos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Post_PostAnimal" Member="PostAnimals" ThisKey="Id" OtherKey="ZooID" Type="ZooAnimal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PostAnimal" Member="ZooAnimal">
+    <Type Name="ZooAnimal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PostID" Member="ZooID" Storage="_PostID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Animal_PostAnimal" Member="Animal" ThisKey="AnimalId" OtherKey="Id" Type="Animal" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Post_PostAnimal" Member="Zoos" Storage="_Post" ThisKey="ZooID" OtherKey="Id" Type="Zoos" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

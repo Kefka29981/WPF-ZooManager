@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqToSqlDataClasses">
+  <DataContextMoniker Name="/LinqToSqlDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c5d30229-7206-418b-86a3-d2cb6eeb163c" absoluteBounds="2.625, 1.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/Animal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89ac4e58-614b-4488-8000-6700fd1670e6" absoluteBounds="2.6399999999999997, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="785bb2cf-2151-454f-b9c8-aff2ff7bfbbc" absoluteBounds="6.5, 4.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/Zoos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a206ee9-f64e-4bdf-90bf-2661894a8127" absoluteBounds="6.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4eb6942a-9a74-4c7e-b123-3406acc54fa5" absoluteBounds="6.5, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/ZooAnimal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70dd47a2-45f1-43a1-bd46-0cba3c120f49" absoluteBounds="6.515, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 1.72199625651042); (6.5 : 1.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataClassesDataContext/Animal/Animal_PostAnimal" />
+      <nodes>
+        <classShapeMoniker Id="c5d30229-7206-418b-86a3-d2cb6eeb163c" />
+        <classShapeMoniker Id="4eb6942a-9a74-4c7e-b123-3406acc54fa5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 4.25); (7.5 : 2.5112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataClassesDataContext/Zoos/Post_PostAnimal" />
+      <nodes>
+        <classShapeMoniker Id="785bb2cf-2151-454f-b9c8-aff2ff7bfbbc" />
+        <classShapeMoniker Id="4eb6942a-9a74-4c7e-b123-3406acc54fa5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
